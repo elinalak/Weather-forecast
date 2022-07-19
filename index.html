@@ -4,11 +4,127 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/90fe46de81.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/index.css" />
+    <title>Weather Forecast 🌡</title>
   </head>
+
   <body>
-    <h1>Hello world</h1>
-    <script src="index.js"></script>
+    <div class="main container">
+      <div class="current place">
+        <button id="current-location" class="current-location">Your location</button>
+        <h1>KRAKOW</h1>
+      </div>
+      <div class="main-icon">
+        <i class="fa-solid fa-cloud-sun mainicon"></i>
+      </div>
+       <small class ="keyweather"><span id="today-sky">Clouds</span></br> Wind: <span id="today-wind-speed">5</span> km/h </br> Humidity: <span id="today-humidity">20</span>% </br> Pressure: <span id="today-pressure">1017</span> hpA </small>
+      <div class="current data">
+        <small
+          ><span id="current-day">Thursday</span>
+          <br />
+          <span id="current-date">16/06/2022</span></small
+        >
+        
+        <p><a href="#" id="celcius">&#x2103</a> 🌡 <a href="#" id="farenheit">&#8457</a></p>
+        <p class="current temperature"><b><span class="tofaren" id="today-day-temp">28</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren" id="today-night-temp">12</span><span class="temp-icon">&#x2103</span></p>
+      </div>
+      <div class="input form">
+        <input
+          type="search" 
+          class="city-name"
+          placeholder="Enter city here"
+          autofocus = "on"
+          id="input-city"
+        />
+        <button type="button" class="btn btn-secondary btn-rounded" id="button">
+          Search
+        </button>
+      </div>
+      <div class="rainbow">
+        <div class="rainbowcolor-1">R</div>
+        <div class="rainbowcolor-2">A</div>
+        <div class="rainbowcolor-3">I</div>
+        <div class="rainbowcolor-4">N</div>
+        <div class="rainbowcolor-5">B</div>
+        <div class="rainbowcolor-6">O</div>
+        <div class="rainbowcolor-7">W</div>
+      </div>
+      <div class="future weather">
+        <div class="day-container">
+          <div class="day">
+            <h3>Friday</h3>
+            <hr />
+            <b><span class="tofaren">24</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren">14</span><span class="temp-icon">&#x2103</span>
+          </div>
+          <div class="day-icon1"><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="day-container">
+          <div class="day">
+            <h3>Saturday</h3>
+            <hr />
+            <b><span class="tofaren">25</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren">14</span><span class="temp-icon">&#x2103</span>
+          </div>
+          <div class="day-icon2"><i class="fa-regular fa-sun"></i></div>
+        </div>
+        <div class="day-container">
+          <div class="day">
+            <h3>Sunday</h3>
+            <hr />
+            <b><span class="tofaren">30</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren">14</span><span class="temp-icon">&#x2103</span>
+          </div>
+          <div class="day-icon2"><i class="fa-regular fa-sun"></i></div>
+        </div>
+        <div class="day-container">
+          <div class="day">
+            <h3>Monday</h3>
+            <hr />
+            <b><span class="tofaren">33</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren">19</span><span class="temp-icon">&#x2103</span>
+          </div>
+          <div class="day-icon2"><i class="fa-regular fa-sun"></i></div>
+        </div>
+        <div class="day-container">
+          <div class="day">
+            <h3>Tuesday</h3>
+            <hr />
+            <b><span class="tofaren">26</span><span class="temp-icon">&#x2103</span> </b>/ <span class="tofaren">19</span><span class="temp-icon">&#x2103</span>
+          </div>
+          <div class="day-icon3"><i class="fa-solid fa-cloud"></i></div>
+        </div>
+      </div>
+    </div>
   </body>
+  <footer><small>Coded by Viktoria Lakida - 2022</small></footer>
+  <script src="src/index.js"></script>
 </html>

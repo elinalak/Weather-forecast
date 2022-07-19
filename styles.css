@@ -1,0 +1,155 @@
+body {
+  background-color: #f8fcff;
+}
+
+h1 {
+  margin-top: 38px;
+  font-family: "Staatliches", cursive;
+}
+.current.place {
+  position: absolute;
+  top: 20px;
+}
+
+.current-location {
+  background: rgb(23, 145, 221);
+  color: wheat;
+  border-radius: 20px 250px 20px 270px;
+  box-shadow: 5px 6px 7px 8px lightblue;
+  font-family: "Staatliches", cursive;
+  padding: 3px 10px;
+}
+.current-location:hover {
+  border: 2px;
+  background-color: lightblue;
+  color: white;
+  border: 1 px wheat;
+}
+.current.temperature {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: "Staatliches", cursive;
+}
+.current.data {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 180px;
+  font-family: "Staatliches", cursive;
+}
+.main-icon {
+  position: absolute;
+  top: 20px;
+  right: 210px;
+  color: orange;
+  font-size: 80px;
+}
+.keyweather {
+  position: absolute;
+  right: 350px;
+  top: 20px;
+  font-weight: bold;
+  font-family: "Staatliches", cursive;
+}
+
+.rainbowcolor-1 {
+  background-color: red;
+  color: red;
+  text-align: center;
+  font-size: 3px;
+  margin-top: 5px;
+  border-radius: 50px;
+}
+.rainbowcolor-2 {
+  background-color: orange;
+  color: orange;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.rainbowcolor-3 {
+  background-color: yellow;
+  color: yellow;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.rainbowcolor-4 {
+  background-color: green;
+  color: green;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.rainbowcolor-5 {
+  background-color: lightseagreen;
+  color: lightseagreen;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.rainbowcolor-6 {
+  background-color: blue;
+  color: blue;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.rainbowcolor-7 {
+  background-color: blueviolet;
+  color: blueviolet;
+  font-size: 3px;
+  border-radius: 50px;
+}
+.day {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgb(235, 235, 83);
+  text-align: center;
+  font-family: "Staatliches", cursive;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 250, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  width: 200px;
+  height: 250px;
+}
+.day:hover {
+  border: 2px solid black;
+}
+
+.day-icon1 {
+  text-align: center;
+  color: blue;
+  font-size: 50px;
+  padding: 5px auto;
+}
+
+.day-icon2 {
+  text-align: center;
+  color: orange;
+  font-size: 50px;
+  padding: 5px auto;
+}
+.day-icon3 {
+  text-align: center;
+  color: blue;
+  font-size: 50px;
+  padding: 5px auto;
+}
+.future.weather {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px 20px;
+  row-gap: 10px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 150px;
+}
+
+.input.form {
+  margin-top: 130px;
+  margin-bottom: 15px;
+}
+footer {
+  text-align: center;
+  margin-top: 30px;
+  bottom: auto;
+}
