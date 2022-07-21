@@ -46,7 +46,9 @@ function ShowWeather(response) {
     response.data.main.humidity;
   document.querySelector("#today-pressure").innerHTML =
     response.data.main.pressure;
-  document.querySelector("h1").innerHTML = response.data.name;
+  document.querySelector(
+    "h1"
+  ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 }
 
 let newcity = document.querySelector(".input.form");
