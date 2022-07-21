@@ -13,7 +13,7 @@ h1 {
 }
 .main-icon {
   position: relative;
-  margin-top: -35px;
+  margin-top: -40px;
   margin-left: -20px;
 }
 p.sky::first-letter {
@@ -151,7 +151,7 @@ p.sky::first-letter {
 }
 
 .input.form {
-  margin-top: 196px;
+  margin-top: 205px;
   margin-bottom: 15px;
 }
 footer {
