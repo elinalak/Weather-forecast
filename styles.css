@@ -3,14 +3,18 @@ body {
 }
 
 h1 {
-  margin-top: 38px;
+  margin-top: 18px;
   font-family: "Staatliches", cursive;
 }
 .current.place {
   position: absolute;
   top: 20px;
 }
-
+.main-icon {
+  position: relative;
+  top: -30px;
+  left: -20px;
+}
 .current-location {
   background: rgb(23, 145, 221);
   color: wheat;
@@ -27,10 +31,15 @@ h1 {
 }
 .current.temperature {
   font-size: 25px;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0;
   font-family: "Staatliches", cursive;
 }
+
+.celcius-farenheit {
+  margin-bottom: 0px;
+}
+
 .current.data {
   position: absolute;
   right: 0;
@@ -38,13 +47,7 @@ h1 {
   width: 180px;
   font-family: "Staatliches", cursive;
 }
-.main-icon {
-  position: absolute;
-  top: 20px;
-  right: 210px;
-  color: orange;
-  font-size: 80px;
-}
+
 .keyweather {
   position: absolute;
   right: 350px;
@@ -145,7 +148,7 @@ h1 {
 }
 
 .input.form {
-  margin-top: 130px;
+  margin-top: 170px;
   margin-bottom: 15px;
 }
 footer {

@@ -2,16 +2,7 @@
 let currentday = document.querySelector("#current-day");
 console.log(currentday);
 let data = new Date();
-let day = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let hh = data.getHours();
 if (hh < 10) hh = `0${hh}`;
 let min = data.getMinutes();
@@ -40,8 +31,19 @@ function ShowWeather(response) {
   document.querySelector("#today-night-temp").innerHTML = Math.ceil(
     response.data.main.temp_min
   );
-  document.querySelector("#today-sky").innerHTML =
-    response.data.weather[0].description;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "alt",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+    );
+  //http://openweathermap.org/img/wn/10d@2x.png
   document.querySelector("#today-wind-speed").innerHTML = Math.ceil(
     response.data.wind.speed
   );
