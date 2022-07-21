@@ -37,13 +37,8 @@ function ShowWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  document
-    .querySelector("#icon")
-    .setAttribute(
-      "alt",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
-    );
-  //http://openweathermap.org/img/wn/10d@2x.png
+  document.querySelector("#today-sky").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#today-wind-speed").innerHTML = Math.ceil(
     response.data.wind.speed
   );
