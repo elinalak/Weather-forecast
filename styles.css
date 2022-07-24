@@ -124,25 +124,6 @@ p.sky::first-letter {
   border: 2px solid black;
 }
 
-.day-icon1 {
-  text-align: center;
-  color: blue;
-  font-size: 50px;
-  padding: 5px auto;
-}
-
-.day-icon2 {
-  text-align: center;
-  color: orange;
-  font-size: 50px;
-  padding: 5px auto;
-}
-.day-icon3 {
-  text-align: center;
-  color: blue;
-  font-size: 50px;
-  padding: 5px auto;
-}
 .future.weather {
   margin-top: 30px;
   display: flex;
