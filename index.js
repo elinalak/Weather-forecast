@@ -73,21 +73,25 @@ function displayForecast(response) {
   console.log(responsefuturedata);
   let futuredaysElement = document.querySelector("#futureweather");
   let futuredaysHTML = `<div class="row">`;
-  responsefuturedata.forEach(function (futureDay) {
-    futuredaysHTML =
-      futuredaysHTML +
-      `<div class="col-2">
-          ${formatDay(futureDay.dt)}
-           <img src= "http://openweathermap.org/img/wn/${
-             futureDay.weather[0].icon
-           }@2x.png" alt="clear" class="daily icon" width="42">
-           <b><span class="tofaren">${Math.round(
-             futureDay.temp.max
-           )}</span><span class="temp-icon">&#x2103</span></b>/<span class="tofaren">${Math.round(
-        futureDay.temp.min
-      )}</span><span class="temp-icon">&#x2103</span>
-        </div>
-        `;
+  responsefuturedata.forEach(function (futureDay, index) {
+    if (index < 6 && index > 0) {
+      futuredaysHTML =
+        futuredaysHTML +
+        `<div class="col day-container">
+          <div class="day">
+            <p>${formatDay(futureDay.dt)}</p>
+            <hr /><img src= "http://openweathermap.org/img/wn/${
+              futureDay.weather[0].icon
+            }@2x.png" alt="clear" class="daily icon" width="42">
+            <b><span class="tofaren">${Math.round(
+              futureDay.temp.max
+            )}</span><span class="temp-icon">&#x2103</span></b>/<span class="tofaren">${Math.round(
+          futureDay.temp.min
+        )}</span><span class="temp-icon">&#x2103</span><br>
+         <small> Wind: <span>5</span> km/h </br> Humidity: <span>20</span>% </br> Pressure: <span>1017</span> hpA </small>
+      </div>
+      </div>`;
+    }
   });
   futuredaysHTML = futuredaysHTML + `</div>`;
   futuredaysElement.innerHTML = futuredaysHTML;
