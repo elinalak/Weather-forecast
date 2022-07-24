@@ -88,7 +88,13 @@ function displayForecast(response) {
             )}</span><span class="temp-icon">&#x2103</span></b>/<span class="tofaren">${Math.round(
           futureDay.temp.min
         )}</span><span class="temp-icon">&#x2103</span><br>
-         <small> Wind: <span>5</span> km/h </br> Humidity: <span>20</span>% </br> Pressure: <span>1017</span> hpA </small>
+         <small> Wind: <span>${Math.round(
+           futureDay.wind_speed
+         )}</span> km/h </br> Humidity: <span>${
+          futureDay.humidity
+        }</span>% </br> Pressure: <span>${
+          futureDay.pressure
+        }</span> hpA </small>
       </div>
       </div>`;
     }
