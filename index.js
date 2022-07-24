@@ -56,9 +56,9 @@ function ShowWeather(response) {
 function getResponsefor5(coordinates) {
   let units = "metric";
   let APIkey = "e9f5a6b09cfb46c92f0a8f305e599284";
-  let APIurl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=3&appid=${APIkey}&units=${units}`;
+  let APIurl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=3&appid=${APIkey}&units=${units}`;
   console.log(APIurl);
-}
+} //`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
 
 let newcity = document.querySelector(".input.form");
 newcity.addEventListener("click", cityByClick);
