@@ -26,8 +26,12 @@ p.future-description::first-letter {
   font-size: 0.875em;
 }
 .current-location {
-  background: rgb(23, 145, 221);
-  color: wheat;
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 37, 84) 11.2%,
+    rgba(0, 37, 84, 0.32) 100.2%
+  );
+  color: lightblue;
   border-radius: 20px 250px 20px 270px;
   box-shadow: 5px 6px 7px 8px lightblue;
   font-family: "Staatliches", cursive;
@@ -35,9 +39,10 @@ p.future-description::first-letter {
 }
 .current-location:hover {
   border: 2px;
-  background-color: lightblue;
-  color: white;
+  background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  color: grey;
   border: 1 px wheat;
+  opacity: 0.7;
 }
 .temp-now {
   position: relative;
