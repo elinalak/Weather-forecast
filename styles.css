@@ -39,6 +39,15 @@ p.future-description::first-letter {
   color: white;
   border: 1 px wheat;
 }
+.temp-now {
+  position: relative;
+  left: 75px;
+  top: -65px;
+  font-family: "Staatliches", cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .current.temperature {
   font-size: 25px;
   margin-top: 0px;

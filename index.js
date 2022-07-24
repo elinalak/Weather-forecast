@@ -25,10 +25,13 @@ currentdate.innerHTML = `${dd}/${mm}/${yyyy}`;
 //Add a search engine, when searching for a city
 function ShowWeather(response) {
   console.log(response.data);
+  document.querySelector("#temp-now").innerHTML = Math.round(
+    response.data.main.temp
+  );
   document.querySelector("#today-day-temp").innerHTML = Math.ceil(
     response.data.main.temp_max
   );
-  document.querySelector("#today-night-temp").innerHTML = Math.ceil(
+  document.querySelector("#today-night-temp").innerHTML = Math.round(
     response.data.main.temp_min
   );
   document
@@ -39,7 +42,7 @@ function ShowWeather(response) {
     );
   document.querySelector("#today-sky").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#today-wind-speed").innerHTML = Math.ceil(
+  document.querySelector("#today-wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#today-humidity").innerHTML =
