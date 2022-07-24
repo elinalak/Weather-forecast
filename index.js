@@ -79,8 +79,12 @@ function displayForecast(response) {
         futuredaysHTML +
         `<div class="col day-container">
           <div class="day">
-            <p>${formatDay(futureDay.dt)}</p>
-            <hr /><img src= "http://openweathermap.org/img/wn/${
+            <b>${formatDay(futureDay.dt)}</b>
+            <hr />
+            <p class="future-description">${
+              futureDay.weather[0].description
+            }</p>
+            <img src= "http://openweathermap.org/img/wn/${
               futureDay.weather[0].icon
             }@2x.png" alt="clear" class="daily icon" width="42">
             <b><span class="tofaren">${Math.round(

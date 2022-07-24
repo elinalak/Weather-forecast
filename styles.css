@@ -19,6 +19,12 @@ h1 {
 p.sky::first-letter {
   text-transform: capitalize;
 }
+p.future-description::first-letter {
+  text-transform: capitalize;
+}
+.future-description {
+  font-size: 0.875em;
+}
 .current-location {
   background: rgb(23, 145, 221);
   color: wheat;
