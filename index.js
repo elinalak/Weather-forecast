@@ -2,7 +2,7 @@
 let currentday = document.querySelector("#current-day");
 console.log(currentday);
 let data = new Date();
-let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let hh = data.getHours();
 if (hh < 10) hh = `0${hh}`;
 let min = data.getMinutes();
@@ -52,13 +52,46 @@ function ShowWeather(response) {
 
   getResponsefor5(response.data.coord);
 }
-
+//getting further forecast response
 function getResponsefor5(coordinates) {
   let units = "metric";
   let APIkey = "e9f5a6b09cfb46c92f0a8f305e599284";
   let APIurl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=3&appid=${APIkey}&units=${units}`;
-  console.log(APIurl);
+  axios.get(APIurl).then(displayForecast);
 } //`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+
+//display future weather
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let responsefuturedata = response.data.daily;
+  console.log(responsefuturedata);
+  let futuredaysElement = document.querySelector("#futureweather");
+  let futuredaysHTML = `<div class="row">`;
+  responsefuturedata.forEach(function (futureDay) {
+    futuredaysHTML =
+      futuredaysHTML +
+      `<div class="col-2">
+          ${formatDay(futureDay.dt)}
+           <img src= "http://openweathermap.org/img/wn/${
+             futureDay.weather[0].icon
+           }@2x.png" alt="clear" class="daily icon" width="42">
+           <b><span class="tofaren">${Math.round(
+             futureDay.temp.max
+           )}</span><span class="temp-icon">&#x2103</span></b>/<span class="tofaren">${Math.round(
+        futureDay.temp.min
+      )}</span><span class="temp-icon">&#x2103</span>
+        </div>
+        `;
+  });
+  futuredaysHTML = futuredaysHTML + `</div>`;
+  futuredaysElement.innerHTML = futuredaysHTML;
+}
 
 let newcity = document.querySelector(".input.form");
 newcity.addEventListener("click", cityByClick);
