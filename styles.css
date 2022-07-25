@@ -11,6 +11,13 @@ h1 {
   position: absolute;
   top: 20px;
 }
+
+.daily.icon {
+  border-radius: 50px;
+  box-shadow: 4px 3px 8px 1px whitesmoke;
+  background-color: lightblue;
+}
+
 .main-icon {
   position: relative;
   margin-top: -40px;
@@ -135,7 +142,7 @@ p.future-description::first-letter {
   padding-top: 10px;
 }
 .day:hover {
-  border: 2px solid wheat;
+  border: 2px solid rgb(123, 151, 186);
 }
 
 .future.weather {
