@@ -98,6 +98,8 @@ let windDirection = [
   { name: "NW", dig: [310, 320] },
   { name: "N/NW", dig: [330, 340] },
 ];
+console.log(windDirection[0].pic);
+
 function displayForecast(response) {
   let responsefuturedata = response.data.daily;
   console.log(responsefuturedata);
@@ -140,7 +142,7 @@ function displayForecast(response) {
         }</span> hpA </br> Wind: <span>${Math.round(
           futureDay.wind_speed
         )}</span> km/h </br> Direction: <span>
-        ${winda} </span> </small>
+        ${winda} </span> </br> <img alt = "compas" src="https://cdn-icons-png.flaticon.com/512/526/526773.png?w=996" width="32" ></small>
       </div>
       </div>`;
     }
