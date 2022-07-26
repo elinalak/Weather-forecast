@@ -54,7 +54,7 @@ function ShowWeather(response) {
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let wind = Math.round(response.data.wind.deg / 10) * 10;
-  console.log("Wind is ", wind);
+  console.log("Wind today is ", wind);
   windDirection.forEach((element, index) => {
     element.dig.forEach((el) => {
       if (wind === el) {
@@ -107,6 +107,15 @@ function displayForecast(response) {
   let futuredaysHTML = `<div class="row">`;
   responsefuturedata.forEach(function (futureDay, index) {
     if (index < 6 && index > 0) {
+      let windfuture = Math.round(futureDay.wind_deg / 10) * 10;
+      console.log("Wind future is ", windfuture);
+      windDirection.forEach((element) => {
+        element.dig.forEach((el) => {
+          if (windfuture === el) {
+            winda = element.name;
+          }
+        });
+      });
       futuredaysHTML =
         futuredaysHTML +
         `<div class="col day-container">
@@ -131,7 +140,7 @@ function displayForecast(response) {
         }</span> hpA </br> Wind: <span>${Math.round(
           futureDay.wind_speed
         )}</span> km/h </br> Direction: <span>
-        N </span> </small>
+        ${winda} </span> </small>
       </div>
       </div>`;
     }
