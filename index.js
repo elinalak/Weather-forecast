@@ -53,6 +53,15 @@ function ShowWeather(response) {
     "h1"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
+  let wind = Math.round(response.data.wind.deg / 10) * 10;
+  console.log("Wind is ", wind);
+  windDirection.forEach((element, index) => {
+    element.dig.forEach((el) => {
+      if (wind === el) {
+        document.querySelector("#direction").innerHTML = element.name;
+      }
+    });
+  });
   getResponsefor5(response.data.coord);
 }
 //getting further forecast response
@@ -70,10 +79,30 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
   return days[day];
 }
-
+//Massive of wind directions
+let windDirection = [
+  { name: "N", dig: [350, 360, 010] },
+  { name: "N/NE", dig: [20, 30] },
+  { name: "NE", dig: [40, 50] },
+  { name: "E/NE", dig: [60, 70] },
+  { name: "E", dig: [80, 90, 100] },
+  { name: "E/SE", dig: [110, 120] },
+  { name: "SE", dig: [130, 140] },
+  { name: "S/SE", dig: [150, 160] },
+  { name: "S", dig: [170, 180, 190] },
+  { name: "S/SW", dig: [200, 210] },
+  { name: "SW", dig: [220, 230] },
+  { name: "W/SW", dig: [240, 250] },
+  { name: "W", dig: [260, 270, 280] },
+  { name: "W/NW", dig: [290, 300] },
+  { name: "NW", dig: [310, 320] },
+  { name: "N/NW", dig: [330, 340] },
+];
 function displayForecast(response) {
   let responsefuturedata = response.data.daily;
   console.log(responsefuturedata);
+
+  console.log(windDirection[0].dig);
   let futuredaysElement = document.querySelector("#futureweather");
   let futuredaysHTML = `<div class="row">`;
   responsefuturedata.forEach(function (futureDay, index) {
@@ -95,13 +124,14 @@ function displayForecast(response) {
             )}</span><span class="temp-icon">&#x2103</span></b>/<span class="tofaren">${Math.round(
           futureDay.temp.min
         )}</span><span class="temp-icon">&#x2103</span><br>
-         <small> Wind: <span>${Math.round(
-           futureDay.wind_speed
-         )}</span> km/h </br> Humidity: <span>${
-          futureDay.humidity
-        }</span>% </br> Pressure: <span>${
+         <small> Humidity: <span>${
+           futureDay.humidity
+         }</span>% </br> Pressure: <span>${
           futureDay.pressure
-        }</span> hpA </small>
+        }</span> hpA </br> Wind: <span>${Math.round(
+          futureDay.wind_speed
+        )}</span> km/h </br> Direction: <span>
+        N </span> </small>
       </div>
       </div>`;
     }
