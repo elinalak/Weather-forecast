@@ -130,6 +130,13 @@ p.future-description::first-letter {
   font-size: 3px;
   border-radius: 50px;
 }
+.hour {
+  list-style: none;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
 .day {
   display: block;
   margin: 0 auto;

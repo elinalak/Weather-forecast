@@ -79,6 +79,20 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
   return days[day];
 }
+
+// function getHours(timestamp) {
+//   let time = new Date(timestamp * 1000);
+//   let gh = time.getHours();
+//   if (gh < 10) {
+//     gh = `0${gh}`;
+//   }
+//   let mn = time.getMinutes();
+//   if (mn < 10) {
+//     mn = `0${mn}`;
+//   }
+//   return `${gh}:${mn}`;
+// }
+
 //Massive of wind directions
 let windDirection = [
   { name: "N", dig: [350, 360, 010] },
@@ -104,12 +118,33 @@ function displayForecast(response) {
   let responsefuturedata = response.data.daily;
   console.log(responsefuturedata);
 
+  let hoursweather = response.data.hourly;
+  console.log(hoursweather);
+
+  // // //weather in 48 hours
+  // let hourlyElement = document.querySelector("#hourly");
+  // let hourlyHTML = `<div class="row">`;
+  // hoursweather.forEach(function (futureHour, index) {
+  //   if (index < 5) {
+  //     hourlyHTML =
+  //       hourlyHTML +
+  //       `<div class="col-2 hour-container"> <div class="hour">${getHours(
+  //         futureHour.dt
+  //       )}</br>Rain, mm: ${futureHour.rain["1h"]} </br>UVI: ${
+  //         futureHour.uvi
+  //       }</div></div>`;
+  //   }
+  // });
+  // hourlyHTML = hourlyHTML + `</div>`;
+  // hourlyElement.innerHTML = hourlyHTML;
+
+  //weather in 5 days
   console.log(windDirection[0].dig);
   let futuredaysElement = document.querySelector("#futureweather");
   let futuredaysHTML = `<div class="row">`;
   responsefuturedata.forEach(function (futureDay, index) {
     if (index < 6 && index > 0) {
-      let windfuture = Math.round(futureDay.wind_deg / 10) * 10;
+      let windfuture = Math.round((futureDay.wind_deg / 10) * 10);
       console.log("Wind future is ", windfuture);
       windDirection.forEach((element) => {
         element.dig.forEach((el) => {
