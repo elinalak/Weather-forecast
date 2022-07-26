@@ -80,18 +80,18 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-// function getHours(timestamp) {
-//   let time = new Date(timestamp * 1000);
-//   let gh = time.getHours();
-//   if (gh < 10) {
-//     gh = `0${gh}`;
-//   }
-//   let mn = time.getMinutes();
-//   if (mn < 10) {
-//     mn = `0${mn}`;
-//   }
-//   return `${gh}:${mn}`;
-// }
+function getHours(timestamp) {
+  let time = new Date(timestamp * 1000);
+  let gh = time.getHours();
+  if (gh < 10) {
+    gh = `0${gh}`;
+  }
+  let mn = time.getMinutes();
+  if (mn < 10) {
+    mn = `0${mn}`;
+  }
+  return `${gh}:${mn}`;
+}
 
 //Massive of wind directions
 let windDirection = [
@@ -122,21 +122,21 @@ function displayForecast(response) {
   console.log(hoursweather);
 
   // // //weather in 48 hours
-  // let hourlyElement = document.querySelector("#hourly");
-  // let hourlyHTML = `<div class="row">`;
-  // hoursweather.forEach(function (futureHour, index) {
-  //   if (index < 5) {
-  //     hourlyHTML =
-  //       hourlyHTML +
-  //       `<div class="col-2 hour-container"> <div class="hour">${getHours(
-  //         futureHour.dt
-  //       )}</br>Rain, mm: ${futureHour.rain["1h"]} </br>UVI: ${
-  //         futureHour.uvi
-  //       }</div></div>`;
-  //   }
-  // });
-  // hourlyHTML = hourlyHTML + `</div>`;
-  // hourlyElement.innerHTML = hourlyHTML;
+  let hourlyElement = document.querySelector("#hourly");
+  let hourlyHTML = `<div class="row">`;
+  hoursweather.forEach(function (futureHour, index) {
+    if (index < 10) {
+      hourlyHTML =
+        hourlyHTML +
+        `<div class="col hour-container"> <div class="hour">${getHours(
+          futureHour.dt
+        )}</br>${futureHour.weather[0].main}</br>UVI: ${
+          futureHour.uvi
+        }</div></div>`;
+    }
+  });
+  hourlyHTML = hourlyHTML + `</div>`;
+  hourlyElement.innerHTML = hourlyHTML;
 
   //weather in 5 days
   console.log(windDirection[0].dig);
