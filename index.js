@@ -112,14 +112,14 @@ let windDirection = [
   { name: "NW", dig: [310, 320] },
   { name: "N/NW", dig: [330, 340] },
 ];
-console.log(windDirection[0].pic);
+console.log(windDirection[0].name);
 
 function displayForecast(response) {
   let responsefuturedata = response.data.daily;
   console.log(responsefuturedata);
 
   let hoursweather = response.data.hourly;
-  console.log(hoursweather);
+  console.log("Hourly response", hoursweather);
 
   // // //weather in 48 hours
   let hourlyElement = document.querySelector("#hourly");
@@ -144,7 +144,7 @@ function displayForecast(response) {
   let futuredaysHTML = `<div class="row">`;
   responsefuturedata.forEach(function (futureDay, index) {
     if (index < 6 && index > 0) {
-      let windfuture = Math.round((futureDay.wind_deg / 10) * 10);
+      let windfuture = Math.round(futureDay.wind_deg / 10) * 10;
       console.log("Wind future is ", windfuture);
       windDirection.forEach((element) => {
         element.dig.forEach((el) => {
